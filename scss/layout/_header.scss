@@ -1,0 +1,20 @@
+@use '../utils/variables' as *;
+
+$header-shadow: 0px 4px 4px
+  rgba(
+    $color: $color-black,
+    $alpha: 0.2,
+  );
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: $content-padding-inline;
+  box-shadow: $header-shadow;
+}
+
+.site-header__title {
+  font-size: $font-2xl;
+  margin: 0;
+}
