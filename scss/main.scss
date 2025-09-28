@@ -1,3 +1,7 @@
 @use 'utils/fonts';
 @use 'utils/reset';
-@use 'utils/variables';
+@use 'utils/variables' as *;
+
+body {
+  font-family: $primary-font;
+}
