@@ -1,1 +1,115 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins';
+
+.main-content {
+  background: $color-bg-primary;
+  padding-block: $spacing-xxl;
+  padding-inline: $content-padding-inline;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 20rem));
+  gap: $spacing-lg;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $color-white;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+}
+
+.book-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.book-card__info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: $spacing-md;
+}
+
+.book-card__title,
+.book-card__author,
+.book-card__pages {
+  margin: $spacing-none;
+}
+
+.book-card__title {
+  font-size: $font-2xl;
+  padding-bottom: $spacing-xs;
+}
+
+.book-card__author {
+  font-size: $font-base;
+  letter-spacing: 0.05em;
+  padding-bottom: $spacing-xs;
+}
+
+.book-card__pages {
+  font-size: $font-xs;
+  font-weight: $font-light;
+  opacity: $opacity-80;
+  padding-bottom: $spacing-xs / 2;
+}
+
+.book-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: $spacing-sm * 0.7 $spacing-sm * 5;
+  border: $border-none;
+  border-radius: $radius-sm;
+}
+
+.btn.book-card__toggle-read {
+  background: $color-light-green;
+}
+
+.btn.book-card__toggle-unread {
+  background: $color-white;
+  color: black;
+  opacity: 0.3;
+  border: $border-width-thin solid $color-light-grey;
+}
+
+.book-card__icon {
+  position: absolute;
+  left: $spacing-sm;
+}
+
+.book-card__icon svg {
+  @include mixins.icon-size($font-xl);
+}
+
+.book-card__toggle-text,
+.book-card__remove-text {
+  font-size: $font-base;
+}
+
+.book-card__icon-read {
+  fill: $color-dark-green;
+}
+
+.book-card__icon-unread {
+  fill: $color-black;
+  opacity: 0.3;
+}
+
+.book-card__icon-trash {
+  fill: $color-light-red;
+}

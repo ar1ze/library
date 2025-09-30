@@ -1,22 +1,133 @@
-$primary-font: 'Open Sans', sans-serif;
-
+// ============================================
+// COLORS - Base
+// ============================================
 $color-black: #000000;
 $color-white: #ffffff;
 
-$font-xs: 0.75rem; 
-$font-sm: 0.875rem; 
-$font-base: 1rem; 
-$font-lg: 1.125rem; 
-$font-xl: 1.25rem; 
-$font-2xl: 1.5rem; 
-$font-3xl: 1.875rem; 
-$font-4xl: 2.25rem; 
+// ============================================
+// SPACING
+// ============================================
+$spacing-none: 0; // 0px - reset margins/padding
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
+$spacing-xxl: 4rem; // 64px
 
-$spacing-xs: 0.5rem;
-$spacing-sm: 1rem;
-$spacing-md: 1.5rem;
-$spacing-lg: 2rem;
-$spacing-xl: 3rem;
-$spacing-xxl: 4rem;
+// ============================================
+// BORDER RADIUS
+// ============================================
+$radius-none: 0;
+$radius-xs: 0.125rem; // 2px
+$radius-sm: 0.25rem; // 4px
+$radius-md: 0.5rem; // 8px
+$radius-lg: 1rem; // 16px
+$radius-xl: 1.5rem; // 24px
+$radius-full: 9999px; // circular/pill
 
-$content-padding-inline: $spacing-xxl;
+// ============================================
+// TYPOGRAPHY - Font Sizes
+// ============================================
+$font-xs: 0.75rem; // 12px
+$font-sm: 0.875rem; // 14px
+$font-base: 1rem; // 16px
+$font-lg: 1.125rem; // 18px
+$font-xl: 1.25rem; // 20px
+$font-2xl: 1.5rem; // 24px
+$font-3xl: 1.875rem; // 30px
+$font-4xl: 2.25rem; // 36px
+$font-5xl: 3rem; // 48px
+
+// ============================================
+// TYPOGRAPHY - Font Weights
+// ============================================
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+// ============================================
+// TYPOGRAPHY - Line Heights
+// ============================================
+$leading-none: 1;
+$leading-tight: 1.25;
+$leading-snug: 1.375;
+$leading-normal: 1.5;
+$leading-relaxed: 1.625;
+$leading-loose: 2;
+
+// ============================================
+// SHADOWS
+// ============================================
+$shadow-none: none;
+$shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -4px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 8px 10px -6px rgba(0, 0, 0, 0.1);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+// ============================================
+// BORDERS
+// ============================================
+$border-none: none;
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 4px;
+
+$border-color-light: #e5e7eb;
+$border-color-medium: #d1d5db;
+$border-color-dark: #9ca3af;
+
+// ============================================
+// OPACITY
+// ============================================
+$opacity-0: 0;
+$opacity-5: 0.05;
+$opacity-10: 0.1;
+$opacity-20: 0.2;
+$opacity-25: 0.25;
+$opacity-30: 0.3;
+$opacity-40: 0.4;
+$opacity-50: 0.5;
+$opacity-60: 0.6;
+$opacity-70: 0.7;
+$opacity-75: 0.75;
+$opacity-80: 0.8;
+$opacity-90: 0.9;
+$opacity-95: 0.95;
+$opacity-100: 1;
+
+// ============================================
+// Z-INDEX
+// ============================================
+$z-base: 0;
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-notification: 1080;
+
+// ============================================
+// PROJECT
+// ============================================
+
+$primary-font: 'Open Sans', sans-serif;
+
+$color-bg-primary: #ebebee;
+$color-blue: #3c69cc;
+$color-dark-blue: #1e293b;
+$color-light-green: #e6fae6;
+$color-dark-green: #28a745;
+$color-light-red: #fb9d9b;
+$color-light-grey: rgba($color-black, 0.3);
+
+$content-padding-inline: 2 * $spacing-xl;
