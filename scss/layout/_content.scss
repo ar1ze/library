@@ -1,6 +1,8 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins';
 
+@use 'sass:color';
+
 .main-content {
   background: $color-bg-primary;
   padding-block: $spacing-xxl;
@@ -57,7 +59,7 @@
   font-size: $font-xs;
   font-weight: $font-light;
   opacity: $opacity-80;
-  padding-bottom: $spacing-xs / 2;
+  padding-bottom: $spacing-xs * 0.5;
 }
 
 .book-card__actions {
@@ -76,20 +78,36 @@
   border-radius: $radius-sm;
 }
 
-.btn.book-card__toggle-read {
+.book-card__toggle-read.btn {
   background: $color-light-green;
+  @include mixins.button-effects(
+    $hover-bg: color.scale($color-light-green, $lightness: -5%),
+    $focus-color: $color-dark-green
+  );
 }
 
-.btn.book-card__toggle-unread {
+.book-card__toggle-unread.btn {
   background: $color-white;
   color: black;
   opacity: 0.3;
   border: $border-width-thin solid $color-light-grey;
+  @include mixins.button-effects(
+    $hover-opacity: 0.5,
+    $focus-color: $color-black
+  );
+}
+
+.book-card__remove.btn {
+  @include mixins.button-effects(
+    $hover-bg: color.scale($color-light-red, $lightness: +75%),
+    $focus-color: $color-light-red
+  );
 }
 
 .book-card__icon {
   position: absolute;
   left: $spacing-sm;
+  @include mixins.icon-slide-on-hover;
 }
 
 .book-card__icon svg {

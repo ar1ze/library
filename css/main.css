@@ -87,20 +87,69 @@
   border-radius: 0.25rem;
 }
 
-.btn.book-card__toggle-read {
+.book-card__toggle-read.btn {
   background: #e6fae6;
+  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
+}
+.book-card__toggle-read.btn:hover {
+  background: #d2f6d2;
+}
+.book-card__toggle-read.btn:hover .book-card__icon {
+  transform: translateX(2px);
+}
+.book-card__toggle-read.btn:active {
+  transform: scale(0.98);
+}
+.book-card__toggle-read.btn:focus-visible {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
 }
 
-.btn.book-card__toggle-unread {
+.book-card__toggle-unread.btn {
   background: #ffffff;
   color: black;
   opacity: 0.3;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
+}
+.book-card__toggle-unread.btn:hover {
+  opacity: 0.5;
+}
+.book-card__toggle-unread.btn:hover .book-card__icon {
+  transform: translateX(2px);
+}
+.book-card__toggle-unread.btn:active {
+  transform: scale(0.98);
+}
+.book-card__toggle-unread.btn:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+.book-card__remove.btn {
+  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
+}
+.book-card__remove.btn:hover {
+  background: rgb(254, 230.5, 230);
+}
+.book-card__remove.btn:hover .book-card__icon {
+  transform: translateX(2px);
+}
+.book-card__remove.btn:active {
+  transform: scale(0.98);
+}
+.book-card__remove.btn:focus-visible {
+  outline: 2px solid #fb9d9b;
+  outline-offset: 2px;
 }
 
 .book-card__icon {
   position: absolute;
   left: 1rem;
+  transition: transform 150ms ease;
+}
+.btn:hover .book-card__icon {
+  transform: translateX(2px);
 }
 
 .book-card__icon svg {
