@@ -1,5 +1,5 @@
-@use '../utils/variables' as *;
-@use '../utils/mixins';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins';
 
 @use 'sass:color';
 
@@ -50,7 +50,7 @@
 }
 
 .book-card__author {
-  font-size: $font-base;
+  font-size: $font-size-base;
   letter-spacing: 0.05em;
   padding-bottom: $spacing-xs;
 }
@@ -116,7 +116,7 @@
 
 .book-card__toggle-text,
 .book-card__remove-text {
-  font-size: $font-base;
+  font-size: $font-size-base;
 }
 
 .book-card__icon-read {
