@@ -29,35 +29,35 @@ $radius-full: 9999px; // circular/pill
 // ============================================
 // TYPOGRAPHY - Font Sizes
 // ============================================
-$font-xs: 0.75rem; // 12px
-$font-sm: 0.875rem; // 14px
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
 $font-size-base: 1rem; // 16px
-$font-lg: 1.125rem; // 18px
-$font-xl: 1.25rem; // 20px
-$font-2xl: 1.5rem; // 24px
-$font-3xl: 1.875rem; // 30px
-$font-4xl: 2.25rem; // 36px
-$font-5xl: 3rem; // 48px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
+$font-size-5xl: 3rem; // 48px
 
 // ============================================
 // TYPOGRAPHY - Font Weights
 // ============================================
-$font-light: 300;
-$font-normal: 400;
-$font-medium: 500;
-$font-semibold: 600;
-$font-bold: 700;
-$font-extrabold: 800;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
 
 // ============================================
 // TYPOGRAPHY - Line Heights
 // ============================================
-$leading-none: 1;
-$leading-tight: 1.25;
-$leading-snug: 1.375;
-$leading-normal: 1.5;
-$leading-relaxed: 1.625;
-$leading-loose: 2;
+$line-height-none: 1;
+$line-height-tight: 1.25;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
 
 // ============================================
 // SHADOWS
@@ -79,7 +79,6 @@ $border-none: none;
 $border-width-thin: 1px;
 $border-width-medium: 2px;
 $border-width-thick: 4px;
-
 $border-color-light: #e5e7eb;
 $border-color-medium: #d1d5db;
 $border-color-dark: #9ca3af;
@@ -119,7 +118,6 @@ $z-notification: 1080;
 // ============================================
 // PROJECT
 // ============================================
-
 $font-family-base: 'Open Sans', sans-serif;
 
 $color-bg-primary: #ebebee;
