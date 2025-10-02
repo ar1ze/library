@@ -1,21 +1,28 @@
 @font-face {
   font-family: "Open Sans";
-  src: url("../../assets/fonts/OpenSans.woff2") format("woff2"), url("../../assets/fonts/OpenSans.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url("../../assets/fonts/OpenSans-Bold.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url("../../assets/fonts/OpenSans-Light.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Light.woff") format("woff");
+  src: url("../assets/fonts/OpenSans-Light.woff2") format("woff2"), url("../assets/fonts/OpenSans-Light.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../assets/fonts/OpenSans.woff2") format("woff2"), url("../assets/fonts/OpenSans.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../assets/fonts/OpenSans-Semibold.woff2") format("woff2"), url("../assets/fonts/OpenSans-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../assets/fonts/OpenSans-Bold.woff2") format("woff2"), url("../assets/fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -112,8 +119,8 @@ textarea:not([rows]) {
 
 .main-content {
   background: #ebebee;
-  padding-block: 4rem;
-  padding-inline: 6rem;
+  padding-block: 3rem;
+  padding-inline: 5rem;
 }
 
 .book-grid {
@@ -274,11 +281,55 @@ textarea:not([rows]) {
   fill: #fb9d9b;
 }
 
+.add-book-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-image: repeating-linear-gradient(0deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(90deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(180deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(270deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px);
+  background-size: 2px 100%, 100% 2px, 2px 100%, 100% 2px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.add-book-card:hover:hover {
+  opacity: 0.9;
+}
+.add-book-card:hover:hover {
+  cursor: pointer;
+}
+
+.add-book-card__plus-icon {
+  position: relative;
+}
+
+.add-book-card__horizontal-bar,
+.add-book-card__vertical-bar {
+  width: 0.35rem;
+  height: 3rem;
+  background: #3c69cc;
+  border-radius: 0.5rem;
+}
+
+.add-book-card__vertical-bar {
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.add-book-card__text {
+  position: absolute;
+  bottom: 2.5rem;
+  color: #3c69cc;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .site-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-inline: 6rem;
+  padding-inline: 5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   z-index: 1020;
 }

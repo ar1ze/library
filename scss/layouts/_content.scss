@@ -5,7 +5,7 @@
 
 .main-content {
   background: $color-bg-primary;
-  padding-block: $spacing-xxl;
+  padding-block: $spacing-2xl;
   padding-inline: $content-padding-inline;
 }
 
@@ -130,4 +130,43 @@
 
 .book-card__icon-trash {
   fill: $color-light-red;
+}
+
+.add-book-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $radius-md;
+  @include mixins.dashed-border($color: $color-blue);
+}
+
+.add-book-card:hover {
+  @include mixins.hover-opacity();
+  @include mixins.hover-cursor();
+}
+
+.add-book-card__plus-icon {
+  position: relative;
+}
+
+.add-book-card__horizontal-bar,
+.add-book-card__vertical-bar {
+  width: 0.35rem;
+  height: 3rem;
+  background: $color-blue;
+  border-radius: $radius-md;
+}
+
+.add-book-card__vertical-bar {
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.add-book-card__text {
+  position: absolute;
+  bottom: $spacing-xl;
+  color: $color-blue;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
 }

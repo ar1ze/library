@@ -43,3 +43,34 @@
     transform: translateX(2px);
   }
 }
+
+@mixin dashed-border(
+  $color: $color-blue, 
+  $width: $border-width-medium, 
+  $dash: 8px, 
+  $gap: 8px
+) {
+  $total: $dash + $gap;
+  
+  background-image:
+    repeating-linear-gradient(0deg, $color 0, $color $dash, transparent $dash, transparent $total),
+    repeating-linear-gradient(90deg, $color 0, $color $dash, transparent $dash, transparent $total),
+    repeating-linear-gradient(180deg, $color 0, $color $dash, transparent $dash, transparent $total),
+    repeating-linear-gradient(270deg, $color 0, $color $dash, transparent $dash, transparent $total);
+  
+  background-size: $width 100%, 100% $width, $width 100%, 100% $width;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+@mixin hover-opacity($opacity: $opacity-90) {
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin hover-cursor($cursor: pointer) {
+  &:hover {
+    cursor: $cursor;
+  }
+}
