@@ -1,14 +1,2 @@
-@use 'layout/header';
-@use 'layout/content';
-
-@use 'utils/fonts';
-@use 'utils/reset';
-@use 'utils/variables' as *;
-
-body {
-  font-family: $primary-font;
-  font-size: $font-base;
-  display: grid;
-  grid-template-rows: 8vh 1fr;
-  margin: 0;
-}
+@use 'base';
+@use 'layouts';

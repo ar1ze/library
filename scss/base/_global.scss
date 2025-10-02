@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  display: grid;
+  grid-template-rows: 8vh 1fr;
+  margin: $spacing-none;
+}

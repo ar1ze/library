@@ -1,15 +1,113 @@
-.site-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-inline: 6rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  z-index: 1020;
+@font-face {
+  font-family: "Open Sans";
+  src: url("../../assets/fonts/OpenSans.woff2") format("woff2"), url("../../assets/fonts/OpenSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../../assets/fonts/OpenSans-Bold.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../../assets/fonts/OpenSans-Light.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: 16px;
 }
 
-.site-header__title {
-  font-size: 1.5rem;
+body {
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-template-rows: 8vh 1fr;
   margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
 }
 
 .main-content {
@@ -176,94 +274,18 @@
   fill: #fb9d9b;
 }
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("../../assets/fonts/OpenSans.woff2") format("woff2"), url("../../assets/fonts/OpenSans.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url("../../assets/fonts/OpenSans-Bold.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url("../../assets/fonts/OpenSans-Light.woff2") format("woff2"), url("../../assets/fonts/OpenSans-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.site-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 6rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  z-index: 1020;
 }
 
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-}
-
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
-  margin-block-end: 0;
-}
-
-ul[role=list],
-ol[role=list] {
-  list-style: none;
-}
-
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
-
-h1, h2, h3, h4,
-button, input, label {
-  line-height: 1.1;
-}
-
-h1, h2,
-h3, h4 {
-  text-wrap: balance;
-}
-
-a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
-  color: currentColor;
-}
-
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-input, button,
-textarea, select {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
-:target {
-  scroll-margin-block: 5ex;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
-  display: grid;
-  grid-template-rows: 8vh 1fr;
+.site-header__title {
+  font-size: 1.5rem;
   margin: 0;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
