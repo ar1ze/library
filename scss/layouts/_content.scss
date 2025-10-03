@@ -23,6 +23,11 @@
   background: $color-white;
   border-radius: $radius-md;
   padding: $spacing-lg;
+  box-shadow: $shadow-lg;
+
+  @include mixins.apply-interactive-transition;
+  @include mixins.apply-hover-shadow($shadow-xl);
+  @include mixins.apply-hover-transform(translateY(-4px));
 }
 
 .book-card__body {
@@ -50,7 +55,7 @@
 }
 
 .book-card__author {
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
   letter-spacing: 0.05em;
   padding-bottom: $spacing-xs;
 }
@@ -80,6 +85,7 @@
 
 .book-card__toggle-read.btn {
   background: $color-light-green;
+
   @include mixins.apply-interactive-transition;
   @include mixins.apply-focus-ring($focus-color: $color-dark-green);
   @include mixins.apply-hover-state(
@@ -91,9 +97,10 @@
 
 .book-card__toggle-unread.btn {
   background: $color-white;
+  border: $border-width-thin solid $color-light-grey;
   color: black;
   opacity: 0.3;
-  border: $border-width-thin solid $color-light-grey;
+
   @include mixins.apply-interactive-transition;
   @include mixins.apply-hover-state($opacity: $opacity-50);
   @include mixins.apply-focus-ring($focus-color: $color-black);
@@ -110,6 +117,8 @@
 .book-card__icon {
   position: absolute;
   left: $spacing-sm;
+  padding-top: 2px;
+
   @include mixins.apply-interactive-transition;
   @include mixins.on-parent-hover-transform($parent-selector: '.btn');
 }
@@ -142,12 +151,16 @@
   justify-content: center;
   align-items: center;
   border-radius: $radius-md;
+
+  @include mixins.apply-interactive-transition;
   @include mixins.draw-dashed-border($color: $color-blue);
 }
 
 .add-book-card:hover {
-  @include mixins.apply-interactive-transition;
-  @include mixins.apply-hover-state($opacity: $opacity-80, $cursor: pointer);
+  @include mixins.apply-hover-state(
+    $bg: rgba($color-blue, $opacity-5),
+    $cursor: pointer
+  );
 }
 
 .add-book-card__plus-icon {

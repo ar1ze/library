@@ -24,6 +24,12 @@
   }
 }
 
+@mixin apply-hover-shadow($shadow: $shadow-sm) {
+  &:hover {
+    box-shadow: $shadow;
+  }
+}
+
 @mixin apply-hover-transform($transform: translateX(2px)) {
   &:hover {
     transform: $transform;

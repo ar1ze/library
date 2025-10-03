@@ -137,6 +137,14 @@ textarea:not([rows]) {
   background: #ffffff;
   border-radius: 0.5rem;
   padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
+}
+.book-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+.book-card:hover {
+  transform: translateY(-4px);
 }
 
 .book-card__body {
@@ -164,7 +172,7 @@ textarea:not([rows]) {
 }
 
 .book-card__author {
-  font-size: 1rem;
+  font-size: 0.875rem;
   letter-spacing: 0.05em;
   padding-bottom: 0.5rem;
 }
@@ -208,9 +216,9 @@ textarea:not([rows]) {
 
 .book-card__toggle-unread.btn {
   background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   color: black;
   opacity: 0.3;
-  border: 1px solid rgba(0, 0, 0, 0.3);
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
 .book-card__toggle-unread.btn:hover {
@@ -235,6 +243,7 @@ textarea:not([rows]) {
 .book-card__icon {
   position: absolute;
   left: 1rem;
+  padding-top: 2px;
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
   transition: transform 150ms ease;
 }
@@ -272,17 +281,15 @@ textarea:not([rows]) {
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
+  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
   background-image: repeating-linear-gradient(0deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(90deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(180deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(270deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px);
   background-size: 2px 100%, 100% 2px, 2px 100%, 100% 2px;
   background-position: 0 0, 0 0, 100% 0, 0 100%;
   background-repeat: no-repeat;
 }
 
-.add-book-card:hover {
-  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
-}
 .add-book-card:hover:hover {
-  opacity: 0.8;
+  background: rgba(60, 105, 204, 0.05);
   cursor: pointer;
 }
 
