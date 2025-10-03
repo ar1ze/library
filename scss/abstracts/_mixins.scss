@@ -24,6 +24,17 @@
   }
 }
 
+@mixin apply-focus-visible-state($outline: null, $border: null) {
+  &:focus {
+    @if $border {
+      border: $border;
+    }
+    @if $outline {
+      outline: $outline;
+    }
+  }
+}
+
 @mixin apply-hover-shadow($shadow: $shadow-sm) {
   &:hover {
     box-shadow: $shadow;

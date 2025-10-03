@@ -77,16 +77,44 @@
           </div>
         </article>
 
-        <div class="add-book-card">
-          <div class="add-book-card__plus-icon">
-            <div class="add-book-card__vertical-bar"></div>
-            <div class="add-book-card__horizontal-bar"></div>
+        <button class="add-book-btn" type="button">
+          <div class="add-book-btn__plus-icon" aria-hidden="true">
+            <span class="add-book-btn__vertical-bar"></span>
+            <span class="add-book-btn__horizontal-bar"></span>
           </div>
-          <p class="add-book-card__text">Add Book</p>
-        </div>
+          <p class="add-book-btn__text">Add Book</p>
+        </button>
 
       </div>
     </main>
+
+    <dialog class="add-book-dialog" closedby="any">
+      <form class="add-book-form" method="dialog">
+        <h2 class="add-book-dialog__title">Add New Book</h2>
+        <button type="button" class="add-book-dialog__close-btn" aria-label="Close">
+          &times;
+        </button>
+        <div class="add-book-form__field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div class="add-book-form__field">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" required />
+        </div>
+        <div class="add-book-form__field">
+          <label for="pages">Pages</label>
+          <input type="number" id="pages" name="pages" required min="1" />
+        </div>
+        <div class="add-book-form__field--checkbox">
+          <input type="checkbox" id="is-read" name="is-read" />
+          <label for="is-read">I have read this book</label>
+        </div>
+        <div class="add-book-form__actions">
+          <button type="submit" class="add-book-form__submit-btn">Add Book</button>
+        </div>
+      </form>
+    </dialog>
 
     <script src="script.js"></script>
 

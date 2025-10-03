@@ -12,7 +12,14 @@
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 20rem));
+  grid-auto-rows: 20rem;
   gap: $spacing-lg;
+}
+
+.book-card,
+.add-book-btn {
+  border-radius: $radius-sm;
+  box-shadow: $shadow-lg;
 }
 
 .book-card {
@@ -21,9 +28,7 @@
   justify-content: center;
   align-items: center;
   background: $color-white;
-  border-radius: $radius-sm;
   padding: $spacing-lg;
-  box-shadow: $shadow-lg;
 
   @include mixins.apply-interactive-transition;
   @include mixins.apply-hover-shadow($shadow-lg);
@@ -81,6 +86,7 @@
   padding: $spacing-sm * 0.7 $spacing-sm * 5;
   border: $border-none;
   border-radius: $radius-sm;
+  box-shadow: $shadow-sm;
 }
 
 .book-card__toggle-read.btn {
@@ -96,12 +102,16 @@
 
 .book-card__toggle-unread.btn {
   background: $color-white;
-  border: $border-width-thin solid $color-light-grey;
-  color: $color-light-grey;
+  border: $border-width-thin solid $color-light-grey-primary;
   opacity: $opacity-50;
 
+  .book-card__toggle-text {
+    color: $color-light-black;
+    font-weight: $font-weight-normal;
+  }
+
   @include mixins.apply-interactive-transition;
-  @include mixins.apply-hover-state($bg: $color-light-grey);
+  @include mixins.apply-hover-state($bg: $color-light-grey-secondary);
   @include mixins.apply-focus-ring($focus-color: $color-black);
 }
 
@@ -146,41 +156,41 @@
   fill: $color-light-red;
 }
 
-.add-book-card {
+.add-book-btn {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: $border-width-thin solid $color-light-grey;
-  border-radius: $radius-md;
-  box-shadow: $shadow-lg;
+  border: none;
 
   @include mixins.apply-interactive-transition;
-}
-
-.add-book-card:hover {
-  @include mixins.apply-hover-state($bg: $color-light-grey, $cursor: pointer);
   @include mixins.apply-hover-transform(translateY(-2px));
+  @include mixins.apply-hover-state(
+    $bg: $color-light-grey-secondary,
+    $cursor: pointer
+  );
+  @include mixins.apply-focus-ring($focus-color: $color-light-grey-primary)
 }
 
-.add-book-card__plus-icon {
+.add-book-btn__plus-icon {
   position: relative;
 }
 
-.add-book-card__horizontal-bar,
-.add-book-card__vertical-bar {
+.add-book-btn__horizontal-bar,
+.add-book-btn__vertical-bar {
+  display: block;
   width: 0.35rem;
   height: 3rem;
   background: $color-blue;
   border-radius: $radius-md;
 }
 
-.add-book-card__vertical-bar {
+.add-book-btn__vertical-bar {
   transform: rotate(90deg);
   position: absolute;
 }
 
-.add-book-card__text {
+.add-book-btn__text {
   position: absolute;
   bottom: $spacing-xl;
   color: $color-blue;

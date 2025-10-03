@@ -126,7 +126,14 @@ textarea:not([rows]) {
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10rem, 20rem));
+  grid-auto-rows: 20rem;
   gap: 2rem;
+}
+
+.book-card,
+.add-book-btn {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 .book-card {
@@ -135,9 +142,7 @@ textarea:not([rows]) {
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  border-radius: 0.25rem;
   padding: 2rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
 .book-card:hover {
@@ -198,6 +203,7 @@ textarea:not([rows]) {
   padding: 0.7rem 5rem;
   border: none;
   border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
 
 .book-card__toggle-read.btn {
@@ -216,12 +222,17 @@ textarea:not([rows]) {
 .book-card__toggle-unread.btn {
   background: #ffffff;
   border: 1px solid #d6d6d6;
-  color: #d6d6d6;
   opacity: 0.5;
+}
+.book-card__toggle-unread.btn .book-card__toggle-text {
+  color: #252525;
+  font-weight: 400;
+}
+.book-card__toggle-unread.btn {
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
 .book-card__toggle-unread.btn:hover {
-  background: #d6d6d6;
+  background: #e4e4e4;
 }
 .book-card__toggle-unread.btn:focus-visible {
   outline: 1px solid #000000;
@@ -260,7 +271,7 @@ textarea:not([rows]) {
 .book-card__remove-text {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #333333;
+  color: #252525;
 }
 
 .book-card__icon-read {
@@ -276,43 +287,45 @@ textarea:not([rows]) {
   fill: #fb9d9b;
 }
 
-.add-book-card {
+.add-book-btn {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #d6d6d6;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border: none;
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
-
-.add-book-card:hover:hover {
-  background: #d6d6d6;
-  cursor: pointer;
-}
-.add-book-card:hover:hover {
+.add-book-btn:hover {
   transform: translateY(-2px);
 }
+.add-book-btn:hover {
+  background: #e4e4e4;
+  cursor: pointer;
+}
+.add-book-btn:focus-visible {
+  outline: 1px solid #d6d6d6;
+  outline-offset: 2px;
+}
 
-.add-book-card__plus-icon {
+.add-book-btn__plus-icon {
   position: relative;
 }
 
-.add-book-card__horizontal-bar,
-.add-book-card__vertical-bar {
+.add-book-btn__horizontal-bar,
+.add-book-btn__vertical-bar {
+  display: block;
   width: 0.35rem;
   height: 3rem;
   background: #3c69cc;
   border-radius: 0.5rem;
 }
 
-.add-book-card__vertical-bar {
+.add-book-btn__vertical-bar {
   transform: rotate(90deg);
   position: absolute;
 }
 
-.add-book-card__text {
+.add-book-btn__text {
   position: absolute;
   bottom: 2.5rem;
   color: #3c69cc;
