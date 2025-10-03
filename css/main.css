@@ -196,18 +196,14 @@ textarea:not([rows]) {
   background: #e6fae6;
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
+.book-card__toggle-read.btn:focus-visible {
+  outline: 1px solid #28a745;
+  outline-offset: 2px;
+}
 .book-card__toggle-read.btn:hover {
   background: #d2f6d2;
-}
-.book-card__toggle-read.btn:hover .book-card__icon {
-  transform: translateX(2px);
-}
-.book-card__toggle-read.btn:active {
-  transform: scale(0.98);
-}
-.book-card__toggle-read.btn:focus-visible {
-  outline: 2px solid #28a745;
-  outline-offset: 2px;
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 .book-card__toggle-unread.btn {
@@ -220,37 +216,26 @@ textarea:not([rows]) {
 .book-card__toggle-unread.btn:hover {
   opacity: 0.5;
 }
-.book-card__toggle-unread.btn:hover .book-card__icon {
-  transform: translateX(2px);
-}
-.book-card__toggle-unread.btn:active {
-  transform: scale(0.98);
-}
 .book-card__toggle-unread.btn:focus-visible {
-  outline: 2px solid #000000;
+  outline: 1px solid #000000;
   outline-offset: 2px;
 }
 
 .book-card__remove.btn {
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
+.book-card__remove.btn:focus-visible {
+  outline: 1px solid #fb9d9b;
+  outline-offset: 2px;
+}
 .book-card__remove.btn:hover {
   background: rgb(254, 230.5, 230);
-}
-.book-card__remove.btn:hover .book-card__icon {
-  transform: translateX(2px);
-}
-.book-card__remove.btn:active {
-  transform: scale(0.98);
-}
-.book-card__remove.btn:focus-visible {
-  outline: 2px solid #fb9d9b;
-  outline-offset: 2px;
 }
 
 .book-card__icon {
   position: absolute;
   left: 1rem;
+  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
   transition: transform 150ms ease;
 }
 .btn:hover .book-card__icon {
@@ -293,10 +278,11 @@ textarea:not([rows]) {
   background-repeat: no-repeat;
 }
 
-.add-book-card:hover:hover {
-  opacity: 0.9;
+.add-book-card:hover {
+  transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
 .add-book-card:hover:hover {
+  opacity: 0.8;
   cursor: pointer;
 }
 

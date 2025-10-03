@@ -80,9 +80,12 @@
 
 .book-card__toggle-read.btn {
   background: $color-light-green;
-  @include mixins.button-effects(
-    $hover-bg: color.scale($color-light-green, $lightness: -5%),
-    $focus-color: $color-dark-green
+  @include mixins.apply-interactive-transition;
+  @include mixins.apply-focus-ring($focus-color: $color-dark-green);
+  @include mixins.apply-hover-state(
+    $bg: color.scale($color-light-green, $lightness: -5%),
+    $opacity: $opacity-90,
+    $cursor: pointer
   );
 }
 
@@ -91,27 +94,28 @@
   color: black;
   opacity: 0.3;
   border: $border-width-thin solid $color-light-grey;
-  @include mixins.button-effects(
-    $hover-opacity: 0.5,
-    $focus-color: $color-black
-  );
+  @include mixins.apply-interactive-transition;
+  @include mixins.apply-hover-state($opacity: $opacity-50);
+  @include mixins.apply-focus-ring($focus-color: $color-black);
 }
 
 .book-card__remove.btn {
-  @include mixins.button-effects(
-    $hover-bg: color.scale($color-light-red, $lightness: +75%),
-    $focus-color: $color-light-red
+  @include mixins.apply-interactive-transition;
+  @include mixins.apply-focus-ring($focus-color: $color-light-red);
+  @include mixins.apply-hover-state(
+    $bg: color.scale($color-light-red, $lightness: +75%)
   );
 }
 
 .book-card__icon {
   position: absolute;
   left: $spacing-sm;
-  @include mixins.icon-slide-on-hover;
+  @include mixins.apply-interactive-transition;
+  @include mixins.on-parent-hover-transform($parent-selector: '.btn');
 }
 
 .book-card__icon svg {
-  @include mixins.icon-size($font-size-xl);
+  @include mixins.set-size($font-size-xl);
 }
 
 .book-card__toggle-text,
@@ -138,12 +142,12 @@
   justify-content: center;
   align-items: center;
   border-radius: $radius-md;
-  @include mixins.dashed-border($color: $color-blue);
+  @include mixins.draw-dashed-border($color: $color-blue);
 }
 
 .add-book-card:hover {
-  @include mixins.hover-opacity();
-  @include mixins.hover-cursor();
+  @include mixins.apply-interactive-transition;
+  @include mixins.apply-hover-state($opacity: $opacity-80, $cursor: pointer);
 }
 
 .add-book-card__plus-icon {

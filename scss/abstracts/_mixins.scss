@@ -1,76 +1,97 @@
 @use 'variables' as *;
 
-@mixin icon-size($size) {
+@mixin set-size($size) {
   width: $size;
   height: $size;
   min-width: $size;
 }
 
-@mixin button-effects(
-  $hover-bg: null,
-  $hover-opacity: null,
-  $focus-color: null
-) {
+@mixin apply-interactive-transition {
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
+}
 
+@mixin apply-hover-state($bg: null, $opacity: null, $cursor: null) {
   &:hover {
-    @if $hover-bg {
-      background: $hover-bg;
+    @if $bg {
+      background: $bg;
     }
-    @if $hover-opacity {
-      opacity: $hover-opacity;
+    @if $opacity {
+      opacity: $opacity;
     }
-
-    .book-card__icon {
-      transform: translateX(2px);
+    @if $cursor {
+      cursor: $cursor;
     }
   }
+}
 
+@mixin apply-hover-transform($transform: translateX(2px)) {
+  &:hover {
+    transform: $transform;
+  }
+}
+
+@mixin apply-active-transform($scale: 0.98) {
   &:active {
-    transform: scale(0.98);
+    transform: scale($scale);
   }
+}
 
+@mixin apply-focus-ring($focus-color) {
   &:focus-visible {
-    outline: 2px solid $focus-color;
+    outline: $border-width-thin solid $focus-color;
     outline-offset: 2px;
   }
 }
 
-@mixin icon-slide-on-hover {
+@mixin on-parent-hover-transform(
+  $parent-selector,
+  $transform: translateX(2px)
+) {
   transition: transform 150ms ease;
 
-  .btn:hover & {
-    transform: translateX(2px);
+  #{$parent-selector}:hover & {
+    transform: $transform;
   }
 }
 
-@mixin dashed-border(
-  $color: $color-blue, 
-  $width: $border-width-medium, 
-  $dash: 8px, 
+@mixin draw-dashed-border(
+  $color: $color-blue,
+  $width: $border-width-medium,
+  $dash: 8px,
   $gap: 8px
 ) {
   $total: $dash + $gap;
-  
-  background-image:
-    repeating-linear-gradient(0deg, $color 0, $color $dash, transparent $dash, transparent $total),
-    repeating-linear-gradient(90deg, $color 0, $color $dash, transparent $dash, transparent $total),
-    repeating-linear-gradient(180deg, $color 0, $color $dash, transparent $dash, transparent $total),
-    repeating-linear-gradient(270deg, $color 0, $color $dash, transparent $dash, transparent $total);
-  
+
+  background-image: repeating-linear-gradient(
+      0deg,
+      $color 0,
+      $color $dash,
+      transparent $dash,
+      transparent $total
+    ),
+    repeating-linear-gradient(
+      90deg,
+      $color 0,
+      $color $dash,
+      transparent $dash,
+      transparent $total
+    ),
+    repeating-linear-gradient(
+      180deg,
+      $color 0,
+      $color $dash,
+      transparent $dash,
+      transparent $total
+    ),
+    repeating-linear-gradient(
+      270deg,
+      $color 0,
+      $color $dash,
+      transparent $dash,
+      transparent $total
+    );
+
   background-size: $width 100%, 100% $width, $width 100%, 100% $width;
   background-position: 0 0, 0 0, 100% 0, 0 100%;
   background-repeat: no-repeat;
-}
-
-@mixin hover-opacity($opacity: $opacity-90) {
-  &:hover {
-    opacity: $opacity;
-  }
-}
-
-@mixin hover-cursor($cursor: pointer) {
-  &:hover {
-    cursor: $cursor;
-  }
 }
