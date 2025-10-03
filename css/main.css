@@ -135,16 +135,16 @@ textarea:not([rows]) {
   justify-content: center;
   align-items: center;
   background: #ffffff;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   padding: 2rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
 .book-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 .book-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .book-card__body {
@@ -175,12 +175,12 @@ textarea:not([rows]) {
   font-size: 0.875rem;
   letter-spacing: 0.05em;
   padding-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .book-card__pages {
   font-size: 0.75rem;
   font-weight: 300;
-  opacity: 0.8;
   padding-bottom: 0.25rem;
 }
 
@@ -210,19 +210,18 @@ textarea:not([rows]) {
 }
 .book-card__toggle-read.btn:hover {
   background: #d2f6d2;
-  opacity: 0.9;
   cursor: pointer;
 }
 
 .book-card__toggle-unread.btn {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  color: black;
-  opacity: 0.3;
+  border: 1px solid #d6d6d6;
+  color: #d6d6d6;
+  opacity: 0.5;
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
 .book-card__toggle-unread.btn:hover {
-  opacity: 0.5;
+  background: #d6d6d6;
 }
 .book-card__toggle-unread.btn:focus-visible {
   outline: 1px solid #000000;
@@ -259,7 +258,9 @@ textarea:not([rows]) {
 
 .book-card__toggle-text,
 .book-card__remove-text {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333333;
 }
 
 .book-card__icon-read {
@@ -268,7 +269,7 @@ textarea:not([rows]) {
 
 .book-card__icon-unread {
   fill: #000000;
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .book-card__icon-trash {
@@ -280,17 +281,18 @@ textarea:not([rows]) {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #d6d6d6;
   border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
-  background-image: repeating-linear-gradient(0deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(90deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(180deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px), repeating-linear-gradient(270deg, #3c69cc 0, #3c69cc 8px, transparent 8px, transparent 16px);
-  background-size: 2px 100%, 100% 2px, 2px 100%, 100% 2px;
-  background-position: 0 0, 0 0, 100% 0, 0 100%;
-  background-repeat: no-repeat;
 }
 
 .add-book-card:hover:hover {
-  background: rgba(60, 105, 204, 0.05);
+  background: #d6d6d6;
   cursor: pointer;
+}
+.add-book-card:hover:hover {
+  transform: translateY(-2px);
 }
 
 .add-book-card__plus-icon {

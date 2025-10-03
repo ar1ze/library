@@ -7,7 +7,7 @@ $color-white: #ffffff;
 // ============================================
 // SPACING
 // ============================================
-$spacing-none: 0; // 0px
+$spacing-none: 0;
 $spacing-xs: 0.5rem; // 8px
 $spacing-sm: 1rem; // 16px
 $spacing-md: 1.5rem; // 24px
@@ -21,12 +21,11 @@ $spacing-4xl: 4rem; // 64px
 // BORDER RADIUS
 // ============================================
 $radius-none: 0;
-$radius-xs: 0.125rem; // 2px
 $radius-sm: 0.25rem; // 4px
 $radius-md: 0.5rem; // 8px
 $radius-lg: 1rem; // 16px
 $radius-xl: 1.5rem; // 24px
-$radius-full: 9999px; // circular/pill
+$radius-full: 9999px;
 
 // ============================================
 // TYPOGRAPHY - Font Sizes
@@ -46,17 +45,13 @@ $font-size-5xl: 3rem; // 48px
 // ============================================
 $font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
-$font-weight-extrabold: 800;
 
 // ============================================
 // TYPOGRAPHY - Line Heights
 // ============================================
-$line-height-none: 1;
 $line-height-tight: 1.25;
-$line-height-snug: 1.375;
 $line-height-normal: 1.5;
 $line-height-relaxed: 1.625;
 $line-height-loose: 2;
@@ -65,14 +60,10 @@ $line-height-loose: 2;
 // SHADOWS
 // ============================================
 $shadow-none: none;
-$shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 $shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   0 4px 6px -4px rgba(0, 0, 0, 0.1);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-  0 8px 10px -6px rgba(0, 0, 0, 0.1);
-$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
 // ============================================
 // BORDERS
@@ -89,19 +80,9 @@ $border-color-dark: #9ca3af;
 // OPACITY
 // ============================================
 $opacity-0: 0;
-$opacity-5: 0.05;
-$opacity-10: 0.1;
-$opacity-20: 0.2;
 $opacity-25: 0.25;
-$opacity-30: 0.3;
-$opacity-40: 0.4;
 $opacity-50: 0.5;
-$opacity-60: 0.6;
-$opacity-70: 0.7;
 $opacity-75: 0.75;
-$opacity-80: 0.8;
-$opacity-90: 0.9;
-$opacity-95: 0.95;
 $opacity-100: 1;
 
 // ============================================
@@ -122,12 +103,15 @@ $z-notification: 1080;
 // ============================================
 $font-family-base: 'Open Sans', sans-serif;
 
-$color-bg-primary: #ebebee;
+$bg-primary: #ebebee;
 $color-blue: #3c69cc;
+
 $color-dark-blue: #1e293b;
-$color-light-green: #e6fae6;
 $color-dark-green: #28a745;
+
+$color-light-black: #333333;
+$color-light-green: #e6fae6;
 $color-light-red: #fb9d9b;
-$color-light-grey: rgba($color-black, 0.3);
+$color-light-grey: #d6d6d6;
 
 $content-padding-inline: 2 * $spacing-xl;

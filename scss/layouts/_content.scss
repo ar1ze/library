@@ -4,7 +4,7 @@
 @use 'sass:color';
 
 .main-content {
-  background: $color-bg-primary;
+  background: $bg-primary;
   padding-block: $spacing-2xl;
   padding-inline: $content-padding-inline;
 }
@@ -21,13 +21,13 @@
   justify-content: center;
   align-items: center;
   background: $color-white;
-  border-radius: $radius-md;
+  border-radius: $radius-sm;
   padding: $spacing-lg;
   box-shadow: $shadow-lg;
 
   @include mixins.apply-interactive-transition;
-  @include mixins.apply-hover-shadow($shadow-xl);
-  @include mixins.apply-hover-transform(translateY(-4px));
+  @include mixins.apply-hover-shadow($shadow-lg);
+  @include mixins.apply-hover-transform(translateY(-2px));
 }
 
 .book-card__body {
@@ -58,12 +58,12 @@
   font-size: $font-size-sm;
   letter-spacing: 0.05em;
   padding-bottom: $spacing-xs;
+  font-weight: $font-weight-semibold;
 }
 
 .book-card__pages {
   font-size: $font-size-xs;
   font-weight: $font-weight-light;
-  opacity: $opacity-80;
   padding-bottom: $spacing-xs * 0.5;
 }
 
@@ -90,7 +90,6 @@
   @include mixins.apply-focus-ring($focus-color: $color-dark-green);
   @include mixins.apply-hover-state(
     $bg: color.scale($color-light-green, $lightness: -5%),
-    $opacity: $opacity-90,
     $cursor: pointer
   );
 }
@@ -98,11 +97,11 @@
 .book-card__toggle-unread.btn {
   background: $color-white;
   border: $border-width-thin solid $color-light-grey;
-  color: black;
-  opacity: 0.3;
+  color: $color-light-grey;
+  opacity: $opacity-50;
 
   @include mixins.apply-interactive-transition;
-  @include mixins.apply-hover-state($opacity: $opacity-50);
+  @include mixins.apply-hover-state($bg: $color-light-grey);
   @include mixins.apply-focus-ring($focus-color: $color-black);
 }
 
@@ -129,7 +128,9 @@
 
 .book-card__toggle-text,
 .book-card__remove-text {
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-light-black;
 }
 
 .book-card__icon-read {
@@ -138,7 +139,7 @@
 
 .book-card__icon-unread {
   fill: $color-black;
-  opacity: 0.3;
+  opacity: $opacity-25;
 }
 
 .book-card__icon-trash {
@@ -150,17 +151,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: $border-width-thin solid $color-light-grey;
   border-radius: $radius-md;
+  box-shadow: $shadow-lg;
 
   @include mixins.apply-interactive-transition;
-  @include mixins.draw-dashed-border($color: $color-blue);
 }
 
 .add-book-card:hover {
-  @include mixins.apply-hover-state(
-    $bg: rgba($color-blue, $opacity-5),
-    $cursor: pointer
-  );
+  @include mixins.apply-hover-state($bg: $color-light-grey, $cursor: pointer);
+  @include mixins.apply-hover-transform(translateY(-2px));
 }
 
 .add-book-card__plus-icon {
