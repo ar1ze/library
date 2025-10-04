@@ -10,27 +10,24 @@
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
 }
 
-@mixin apply-hover-state($bg: null, $opacity: null, $cursor: null) {
+@mixin apply-hover-state(
+  $bg: null,
+  $border: null,
+  $opacity: null,
+  $cursor: null
+) {
   &:hover {
     @if $bg {
       background: $bg;
+    }
+    @if $border {
+      border: $border;
     }
     @if $opacity {
       opacity: $opacity;
     }
     @if $cursor {
       cursor: $cursor;
-    }
-  }
-}
-
-@mixin apply-focus-visible-state($outline: null, $border: null) {
-  &:focus {
-    @if $border {
-      border: $border;
-    }
-    @if $outline {
-      outline: $outline;
     }
   }
 }
