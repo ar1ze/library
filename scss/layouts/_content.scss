@@ -18,7 +18,7 @@
 
 .book-card,
 .add-book-btn {
-  border-radius: $radius-sm;
+  border-radius: $radius-md;
   box-shadow: $shadow-lg;
 }
 
@@ -87,6 +87,9 @@
   border: $border-none;
   border-radius: $radius-sm;
   box-shadow: $shadow-sm;
+  color: $color-light-black;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
 }
 
 .book-card__toggle-read.btn {
@@ -119,7 +122,8 @@
   @include mixins.apply-interactive-transition;
   @include mixins.apply-focus-ring($focus-color: $color-light-red);
   @include mixins.apply-hover-state(
-    $bg: color.scale($color-light-red, $lightness: +75%)
+    $bg: color.scale($color-light-red, $lightness: +75%),
+    $cursor: pointer
   );
 }
 
@@ -134,13 +138,6 @@
 
 .book-card__icon svg {
   @include mixins.set-size($font-size-xl);
-}
-
-.book-card__toggle-text,
-.book-card__remove-text {
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  color: $color-light-black;
 }
 
 .book-card__icon-read {
@@ -169,7 +166,7 @@
     $bg: $color-light-grey-secondary,
     $cursor: pointer
   );
-  @include mixins.apply-focus-ring($focus-color: $color-light-grey-primary)
+  @include mixins.apply-focus-ring($focus-color: $color-light-grey-primary);
 }
 
 .add-book-btn__plus-icon {

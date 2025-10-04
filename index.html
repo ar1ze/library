@@ -89,31 +89,36 @@
     </main>
 
     <dialog class="add-book-dialog" closedby="any">
-      <form class="add-book-form" method="dialog">
-        <h2 class="add-book-dialog__title">Add New Book</h2>
-        <button type="button" class="add-book-dialog__close-btn" aria-label="Close">
-          &times;
-        </button>
-        <div class="add-book-form__field">
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" required />
-        </div>
-        <div class="add-book-form__field">
-          <label for="author">Author</label>
-          <input type="text" id="author" name="author" required />
-        </div>
-        <div class="add-book-form__field">
-          <label for="pages">Pages</label>
-          <input type="number" id="pages" name="pages" required min="1" />
-        </div>
-        <div class="add-book-form__field--checkbox">
-          <input type="checkbox" id="is-read" name="is-read" />
-          <label for="is-read">I have read this book</label>
-        </div>
-        <div class="add-book-form__actions">
-          <button type="submit" class="add-book-form__submit-btn">Add Book</button>
-        </div>
-      </form>
+      <div class="add-book-dialog__body">
+        <button type="button" class="add-book-dialog__close-btn" aria-label="Close">&times;</button>
+        <form class="add-book-dialog__form" method="dialog">
+          <div class="add-book-dialog__header">
+            <h2 class="add-book-dialog__title">Add new book</h2>
+          </div>
+          <div class="add-book-dialog__form--body">
+            <div class="add-book-dialog__field">
+              <input type="text" class="add-book-dialog__field--text" id="title" name="title" placeholder="Title" required>
+            </div>
+            <div class="add-book-dialog__field">
+              <input type="text" class="add-book-dialog__field--text" id="author" name="author" placeholder="Author">
+            </div>
+            <div class="add-book-dialog__field">
+              <input type="number" class="add-book-dialog__field--number" id="pages" name="pages" placeholder="Pages" min="1">
+            </div>
+            <div class="add-book-dialog__field">
+              <div class="add-book-dialog__field--checkbox-body">
+                <label for="is-read" class="add-book-dialog__checkbox--label">I have read this book</label>
+                <input type="checkbox" class="add-book-dialog__checkbox--input" id="is-read" name="is-read">
+              </div>
+            </div>
+          </div>
+          <div class="add-book-dialog__actions">
+            <button type="submit" class="btn add-book-dialog__submit-btn">
+              Add book
+            </button>
+          </div>
+        </form>
+      </div>
     </dialog>
 
     <script src="script.js"></script>

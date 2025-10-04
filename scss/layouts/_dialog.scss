@@ -1,0 +1,124 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins';
+
+@use 'sass:color';
+
+.add-book-dialog {
+  background: $bg-secondary;
+  font-family: $font-family-base;
+  z-index: $z-modal;
+  border: $border-none;
+  box-shadow: $shadow-lg;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  padding: $spacing-none;
+}
+
+.add-book-dialog::backdrop {
+  background: $color-black;
+  opacity: $opacity-25;
+}
+
+.add-book-dialog__body {
+  position: relative;
+  padding: $spacing-lg $spacing-md;
+}
+
+.add-book-dialog__close-btn {
+  position: absolute;
+  top: $spacing-xs;
+  right: $spacing-xs;
+  border: $border-none;
+  font-size: $font-size-base;
+}
+
+.add-book-dialog__form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.add-book-dialog__header {
+  text-align: center;
+}
+
+.add-book-dialog__title {
+  margin: 0;
+  font-size: $font-size-xl;
+}
+
+.add-book-dialog__form--body {
+  display: grid;
+  row-gap: $spacing-sm;
+}
+
+.add-book-dialog__field {
+  flex: 1;
+}
+
+.add-book-dialog__field--text,
+.add-book-dialog__field--number {
+  width: 100%;
+  padding: 0.6rem 0.35rem;
+  font-weight: $font-weight-semibold;
+  border: $border-none;
+  box-shadow: $shadow-sm;
+  border-radius: $radius-sm;
+}
+
+.add-book-dialog__field--text::placeholder,
+.add-book-dialog__field--numbeer::placeholder {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.add-book-dialog__field--checkbox-body {
+  display: grid;
+  grid-template-columns: auto $font-size-sm;
+  align-items: center;
+  justify-content: center;
+  column-gap: $spacing-xs;
+}
+
+.add-book-dialog__checkbox--label {
+  font-weight: $font-weight-semibold;
+}
+
+.add-book-dialog__checkbox--input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  background: $color-white;
+  border: $border-width-thin solid $color-light-grey-primary;
+  border-radius: $radius-sm;
+
+  @include mixins.set-size(1.1 * $font-size-base);
+}
+
+.add-book-dialog__checkbox--input::before {
+  content: '';
+  background: $color-blue;
+  border-radius: $radius-xs;
+  transform: scale(0);
+
+  @include mixins.apply-interactive-transition;
+  @include mixins.set-size(0.6 * $font-size-base);
+}
+
+.add-book-dialog__checkbox--input:checked::before {
+  transform: scale(1);
+}
+
+.add-book-dialog__checkbox--input,
+.add-book-dialog__checkbox--input::before {
+  box-sizing: border-box;
+}
+
+.add-book-dialog__actions {
+  flex: 1;
+}
+
+.add-book-dialog__submit-btn {
+  border: $border-width-thin solid $color-light-grey-primary;
+}

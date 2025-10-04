@@ -21,10 +21,11 @@ $spacing-4xl: 4rem; // 64px
 // BORDER RADIUS
 // ============================================
 $radius-none: 0;
-$radius-sm: 0.25rem; // 4px
-$radius-md: 0.5rem; // 8px
-$radius-lg: 1rem; // 16px
-$radius-xl: 1.5rem; // 24px
+$radius-xs: 1px;
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 8px;
+$radius-xl: 16px;
 $radius-full: 9999px;
 
 // ============================================
@@ -72,9 +73,6 @@ $border-none: none;
 $border-width-thin: 1px;
 $border-width-medium: 2px;
 $border-width-thick: 4px;
-$border-color-light: #e5e7eb;
-$border-color-medium: #d1d5db;
-$border-color-dark: #9ca3af;
 
 // ============================================
 // OPACITY
@@ -89,14 +87,9 @@ $opacity-100: 1;
 // Z-INDEX
 // ============================================
 $z-base: 0;
-$z-dropdown: 1000;
-$z-sticky: 1020;
-$z-fixed: 1030;
-$z-modal-backdrop: 1040;
-$z-modal: 1050;
-$z-popover: 1060;
-$z-tooltip: 1070;
-$z-notification: 1080;
+$z-dropdown: 10;
+$z-modal: 20;
+$z-tooltip: 30;
 
 // ============================================
 // PROJECT
@@ -104,6 +97,7 @@ $z-notification: 1080;
 $font-family-base: 'Open Sans', sans-serif;
 
 $bg-primary: #ebebee;
+$bg-secondary: #eeecef;
 
 $color-blue: #3c69cc;
 $color-dark-blue: #1e293b;
