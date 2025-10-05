@@ -13,16 +13,16 @@
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   padding: $spacing-none;
-}
 
-.add-book-dialog::backdrop {
-  background: $color-black;
-  opacity: $opacity-25;
+  @include mixins.dialog-animation(
+    $duration: 0.3s,
+    $backdrop-color: rgba($color-black, $opacity-25)
+  );
 }
 
 .add-book-dialog__body {
   position: relative;
-  padding: $spacing-lg $spacing-md;
+  padding: $spacing-lg;
 }
 
 .add-book-dialog__close-btn {
@@ -47,7 +47,7 @@
 }
 
 .add-book-dialog__title {
-  margin: 0;
+  margin: $spacing-none;
   font-size: $font-size-xl;
 }
 
@@ -67,6 +67,8 @@
   font-weight: $font-weight-semibold;
   border: $border-none;
   box-shadow: $shadow-sm;
+  font-size: $font-size-sm;
+  border-radius: $radius-md;
 }
 
 .add-book-dialog__field--text::placeholder,
@@ -101,7 +103,7 @@
 
 .add-book-dialog__checkbox--input::before {
   content: '';
-  background: $color-blue;
+  background: color.scale($color-blue, $lightness: +5%);
   border-radius: $radius-xs;
   transform: scale(0);
 
@@ -124,10 +126,4 @@
     $bg: color.scale($color-blue, $lightness: +75%),
     $cursor: pointer
   );
-}
-
-.add-book-dialog__field--text,
-.add-book-dialog__field--number,
-.add-book-dialog__submit-btn {
-  border-radius: $radius-md;
 }

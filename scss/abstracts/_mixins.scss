@@ -109,3 +109,37 @@
   background-position: 0 0, 0 0, 100% 0, 0 100%;
   background-repeat: no-repeat;
 }
+
+@mixin dialog-animation($duration: 0.25s, $backdrop-color: rgba(0, 0, 0, 0.5)) {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity $duration ease-out, transform $duration ease-out,
+    overlay $duration ease-out allow-discrete,
+    display $duration ease-out allow-discrete;
+
+  &:open {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @starting-style {
+    &:open {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+
+  &::backdrop {
+    transition: background-color $duration ease-out;
+  }
+
+  &:open::backdrop {
+    background-color: $backdrop-color;
+  }
+
+  @starting-style {
+    &:open::backdrop {
+      background-color: transparent;
+    }
+  }
+}

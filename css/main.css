@@ -202,7 +202,7 @@ textarea:not([rows]) {
   position: relative;
   padding: 0.7rem 5rem;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   color: #252525;
   font-size: 0.875rem;
@@ -340,16 +340,35 @@ textarea:not([rows]) {
   font-size: 1rem;
   font-weight: 600;
   padding: 0;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, overlay 0.3s ease-out allow-discrete, display 0.3s ease-out allow-discrete;
 }
-
+.add-book-dialog:open {
+  opacity: 1;
+  transform: scale(1);
+}
+@starting-style {
+  .add-book-dialog:open {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
 .add-book-dialog::backdrop {
-  background: #000000;
-  opacity: 0.25;
+  transition: background-color 0.3s ease-out;
+}
+.add-book-dialog:open::backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+@starting-style {
+  .add-book-dialog:open::backdrop {
+    background-color: transparent;
+  }
 }
 
 .add-book-dialog__body {
   position: relative;
-  padding: 2rem 1.5rem;
+  padding: 2rem;
 }
 
 .add-book-dialog__close-btn {
@@ -396,6 +415,8 @@ textarea:not([rows]) {
   font-weight: 600;
   border: none;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  border-radius: 4px;
 }
 
 .add-book-dialog__field--text::placeholder,
@@ -431,7 +452,7 @@ textarea:not([rows]) {
 
 .add-book-dialog__checkbox--input::before {
   content: "";
-  background: #3c69cc;
+  background: rgb(69.75, 112.5, 206.55);
   border-radius: 1px;
   transform: scale(0);
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
@@ -457,12 +478,6 @@ textarea:not([rows]) {
 .add-book-dialog__submit-btn:hover {
   background: rgb(206.25, 217.5, 242.25);
   cursor: pointer;
-}
-
-.add-book-dialog__field--text,
-.add-book-dialog__field--number,
-.add-book-dialog__submit-btn {
-  border-radius: 4px;
 }
 
 .site-header {
