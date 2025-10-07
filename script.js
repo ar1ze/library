@@ -1,10 +1,10 @@
-const myLibrary = [];
+let myLibrary = [];
 
 const bookGrid = document.querySelector('.book-grid');
-const addBookBtn = document.querySelector('.add-book-btn');
+const addBookButton = document.querySelector('.add-book-btn');
 
 const dialog = document.querySelector('.add-book-dialog');
-const dialogCloseBtn = document.querySelector('.add-book-dialog__close-btn');
+const dialogCloseButton = document.querySelector('.add-book-dialog__close-btn');
 const dialogForm = document.querySelector('.add-book-dialog__form');
 
 const ICONS = {
@@ -30,6 +30,35 @@ function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
 }
 
+function addBookToLibrary(book) {
+  myLibrary.push(book);
+}
+
+function removeBookFromLibrary(idToDelete) {
+  myLibrary = myLibrary.filter((book) => book.id !== idToDelete);
+}
+
+function initializeMyLibrary() {
+  const bookExample1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, true);
+  const bookExample2 = new Book('1984', 'George Orwell', 328, false);
+
+  const bookExamples = [bookExample1, bookExample2];
+
+  bookExamples.forEach((book) => addBookToLibrary(book));
+}
+
+function removeBookCard(event) {
+  const removeButton = event.target.closest('.book-card__remove');
+
+  if (removeButton) {
+    const cardToRemove = removeButton.closest('.book-card');
+    const bookId = cardToRemove.dataset.bookId;
+
+    removeBookFromLibrary(bookId);
+    renderGrid();
+  }
+}
+
 function showDialog() {
   dialog.showModal();
 }
@@ -40,9 +69,11 @@ function closeDialog() {
 
 function createBookCard(book) {
   const card = document.createElement('article');
-  card.classList.add('book-card');
 
-  const isRead = book.isRead;
+  card.classList.add('book-card');
+  card.dataset.bookId = book.id;
+
+  const isRead = book.read;
   const readStatusClass = isRead
     ? 'book-card__toggle-read btn--is-read'
     : 'book-card__toggle-unread';
@@ -76,6 +107,17 @@ function createBookCard(book) {
   return card;
 }
 
+function renderGrid() {
+  bookGrid.innerHTML = '';
+
+  myLibrary.forEach((book) => {
+    const bookCard = createBookCard(book);
+    bookGrid.appendChild(bookCard);
+  });
+
+  bookGrid.appendChild(addBookButton);
+}
+
 function dialogSubmit(event) {
   event.preventDefault();
 
@@ -92,10 +134,15 @@ function dialogSubmit(event) {
   closeDialog();
 
   const bookCard = createBookCard(newBook);
-  bookGrid.insertBefore(bookCard, addBookBtn);
+  bookGrid.insertBefore(bookCard, addBookButton);
 }
 
-addBookBtn.addEventListener('click', showDialog);
+addBookButton.addEventListener('click', showDialog);
 
-dialogCloseBtn.addEventListener('click', closeDialog);
+dialogCloseButton.addEventListener('click', closeDialog);
 dialogForm.addEventListener('submit', dialogSubmit);
+
+bookGrid.addEventListener('click', removeBookCard);
+
+initializeMyLibrary();
+renderGrid();
