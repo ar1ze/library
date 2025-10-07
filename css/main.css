@@ -267,8 +267,7 @@ textarea:not([rows]) {
 
 .book-card__icon svg {
   width: 1.25rem;
-  height: 1.25rem;
-  min-width: 1.25rem;
+  aspect-ratio: 1;
 }
 
 .book-card__icon-read {
@@ -446,8 +445,7 @@ textarea:not([rows]) {
   border: 1px solid #d6d6d6;
   border-radius: 2px;
   width: 1.1rem;
-  height: 1.1rem;
-  min-width: 1.1rem;
+  aspect-ratio: 1;
 }
 
 .add-book-dialog__checkbox--input::before {
@@ -457,16 +455,11 @@ textarea:not([rows]) {
   transform: scale(0);
   transition: background 200ms ease, opacity 200ms ease, transform 100ms ease;
   width: 0.6rem;
-  height: 0.6rem;
-  min-width: 0.6rem;
+  aspect-ratio: 1;
 }
 
 .add-book-dialog__checkbox--input:checked::before {
   transform: scale(1);
-}
-
-.add-book-dialog__actions {
-  flex: 1;
 }
 
 .add-book-dialog__submit-btn {

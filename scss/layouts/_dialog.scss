@@ -115,10 +115,6 @@
   transform: scale(1);
 }
 
-.add-book-dialog__actions {
-  flex: 1;
-}
-
 .add-book-dialog__submit-btn {
   @include mixins.apply-interactive-transition;
   @include mixins.apply-hover-transform(translateY(-2px));

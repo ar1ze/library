@@ -2,8 +2,7 @@
 
 @mixin set-size($size) {
   width: $size;
-  height: $size;
-  min-width: $size;
+  aspect-ratio: 1;
 }
 
 @mixin apply-interactive-transition {
