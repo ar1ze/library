@@ -38,6 +38,15 @@ function removeBookFromLibrary(idToDelete) {
   myLibrary = myLibrary.filter((book) => book.id !== idToDelete);
 }
 
+function toggleReadBookFromLibrary(idToToggle) {
+  myLibrary = myLibrary.map((book) => {
+    if (book.id === idToToggle) {
+      book.read = !book.read;
+    }
+    return book;
+  });
+}
+
 function initializeMyLibrary() {
   const bookExample1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, true);
   const bookExample2 = new Book('1984', 'George Orwell', 328, false);
@@ -47,8 +56,9 @@ function initializeMyLibrary() {
   bookExamples.forEach((book) => addBookToLibrary(book));
 }
 
-function removeBookCard(event) {
+function handleCardActions(event) {
   const removeButton = event.target.closest('.book-card__remove');
+  const isReadToggleButton = event.target.closest('.book-card__toggle-read');
 
   if (removeButton) {
     const cardToRemove = removeButton.closest('.book-card');
@@ -57,6 +67,34 @@ function removeBookCard(event) {
     removeBookFromLibrary(bookId);
     renderGrid();
   }
+
+  if (isReadToggleButton) {
+    const cardElement = isReadToggleButton.closest('.book-card');
+    const bookId = cardElement.dataset.bookId;
+
+    toggleReadBookFromLibrary(bookId);
+
+    const updatedBook = myLibrary.find((book) => book.id === bookId);
+
+    updateCardReadStatus(cardElement, updatedBook);
+  }
+}
+
+function updateCardReadStatus(cardElement, book) {
+  const toggleButton = cardElement.querySelector('.book-card__toggle-read');
+  const iconElement = toggleButton.querySelector('.book-card__icon');
+  const textElement = toggleButton.querySelector('.book-card__toggle-text');
+
+  const isRead = book.read;
+  const readStatusIcon = isRead ? ICONS.read : ICONS.unread;
+  const readStatusText = isRead ? 'Read' : 'Not Read';
+
+  toggleButton.classList.toggle('btn--is-read', isRead);
+  toggleButton.classList.toggle('btn--is-unread', !isRead);
+
+  console.log(toggleButton.classList);
+  iconElement.innerHTML = readStatusIcon;
+  textElement.textContent = readStatusText;
 }
 
 function showDialog() {
@@ -67,7 +105,7 @@ function closeDialog() {
   dialog.close();
 }
 
-function createBookCard(book) {
+function createBookCardElement(book) {
   const card = document.createElement('article');
 
   card.classList.add('book-card');
@@ -76,7 +114,7 @@ function createBookCard(book) {
   const isRead = book.read;
   const readStatusClass = isRead
     ? 'book-card__toggle-read btn--is-read'
-    : 'book-card__toggle-unread';
+    : 'book-card__toggle-read btn--is-unread';
   const readStatusIcon = isRead ? ICONS.read : ICONS.unread;
   const readStatusText = isRead ? 'Read' : 'Not Read';
 
@@ -111,7 +149,7 @@ function renderGrid() {
   bookGrid.innerHTML = '';
 
   myLibrary.forEach((book) => {
-    const bookCard = createBookCard(book);
+    const bookCard = createBookCardElement(book);
     bookGrid.appendChild(bookCard);
   });
 
@@ -133,7 +171,7 @@ function dialogSubmit(event) {
   event.target.reset();
   closeDialog();
 
-  const bookCard = createBookCard(newBook);
+  const bookCard = createBookCardElement(newBook);
   bookGrid.insertBefore(bookCard, addBookButton);
 }
 
@@ -142,7 +180,7 @@ addBookButton.addEventListener('click', showDialog);
 dialogCloseButton.addEventListener('click', closeDialog);
 dialogForm.addEventListener('submit', dialogSubmit);
 
-bookGrid.addEventListener('click', removeBookCard);
+bookGrid.addEventListener('click', handleCardActions);
 
 initializeMyLibrary();
 renderGrid();

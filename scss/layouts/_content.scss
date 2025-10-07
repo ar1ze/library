@@ -79,11 +79,12 @@
 }
 
 .btn {
+  width: 13.4rem;
+  height: 2.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: $spacing-sm * 0.7 $spacing-sm * 5;
   border: $border-none;
   border-radius: $radius-md;
   box-shadow: $shadow-sm;
@@ -92,8 +93,9 @@
   font-weight: $font-weight-semibold;
 }
 
-.book-card__toggle-read.btn {
+.book-card__toggle-read.btn--is-read {
   background: $color-light-green;
+  border: $border-width-thin solid transparent;
 
   @include mixins.apply-interactive-transition;
   @include mixins.apply-focus-ring($focus-color: $color-dark-green);
@@ -103,7 +105,7 @@
   );
 }
 
-.book-card__toggle-unread.btn {
+.book-card__toggle-read.btn--is-unread {
   background: $color-white;
   border: $border-width-thin solid $color-light-grey-primary;
   opacity: $opacity-50;
